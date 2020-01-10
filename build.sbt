@@ -14,10 +14,10 @@ ThisBuild / resolvers ++= Seq("domain").map(Resolver.githubPackagesRepo("lambdac
 
 lazy val root = (project in file("."))
   .settings(
-    name := "domain",
+    name := "course-dsl",
     githubOwner := "lambdacademy-dev",
     libraryDependencies ++= Seq(
-      "lambda" %% "domain" % "0.3.2",
+      "lambda" %% "domain" % "0.3.5",
       "org.scalatest" %% "scalatest" % "3.0.8" % Test
     )
   )
