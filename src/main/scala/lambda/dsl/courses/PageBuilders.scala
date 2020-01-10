@@ -1,6 +1,6 @@
 package lambda.dsl.courses
 
-import lambda.domain.courses.{InteractiveCodeWidget, Page}
+import lambda.domain.courses.InteractiveCodeWidget
 import lambda.domain.courses.Page.{CodePage, PageId, SimplePage}
 
 trait PageBuilders {
