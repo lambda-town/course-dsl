@@ -14,7 +14,7 @@ trait PageBuilders {
     Nil
   )
 
-  def simplePage(title: String): Page  = simplePage(slug(title), title)
+  def simplePage(title: String): SimplePage  = simplePage(slug(title), title)
 
   def codePage(
       id: String,
