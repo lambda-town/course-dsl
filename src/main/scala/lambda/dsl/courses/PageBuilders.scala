@@ -8,7 +8,7 @@ trait PageBuilders {
   def simplePage(
       id: String,
       title: String
-  ): Page = SimplePage(
+  ): SimplePage = SimplePage(
     PageId(id),
     title,
     Nil
@@ -20,7 +20,7 @@ trait PageBuilders {
       id: String,
       title: String,
       code: InteractiveCodeWidget
-  ): Page = CodePage(
+  ): CodePage = CodePage(
     PageId(id),
     title,
     Nil,
