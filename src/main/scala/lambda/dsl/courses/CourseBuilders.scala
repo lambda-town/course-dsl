@@ -1,6 +1,6 @@
 package lambda.dsl.courses
 
-import lambda.domain.Image
+import lambda.domain.Media
 import lambda.domain.courses.Course
 import lambda.domain.courses.Course.CourseId
 
@@ -11,7 +11,7 @@ trait CourseBuilders extends Ids {
       title: String,
       description: String,
       tags: List[String],
-      image: Image
+      image: Media
   ): Course = Course(
     id = CourseId(id),
     title = title,
