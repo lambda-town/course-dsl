@@ -17,6 +17,7 @@ trait WidgetOps {
     def withDependencies(deps: ScalaDependency*): SimpleScala2CodeWidget = widget.copy(dependencies = (widget.dependencies ++ deps).distinct)
     def withDependency(dep: ScalaDependency): SimpleScala2CodeWidget = withDependencies(dep)
     def withDefaultValue(value: String): SimpleScala2CodeWidget = widget.copy(defaultValue = value)
+    def wrapInMain: SimpleScala2CodeWidget = withBaseFile(wrapInMainTemplate)
   }
 
   implicit class TabbedScala2Ops(widget: TabbedScala2CodeWidget) {
@@ -27,5 +28,15 @@ trait WidgetOps {
     def withDependency(dep: ScalaDependency): TabbedScala2CodeWidget = withDependencies(dep)
     def withTabs(tabs: SourceFile*): TabbedScala2CodeWidget = widget.copy(tabs = (widget.tabs ++ tabs).distinct)
     def withTab(tab: SourceFile): TabbedScala2CodeWidget = withTabs(tab)
+    def wrapInMain: TabbedScala2CodeWidget = withBaseFile(wrapInMainTemplate)
   }
+
+  private val wrapInMainTemplate: SourceFile = SourceFile.RawText(
+    """
+      |object Main extends App {
+      |//[userInput
+      |
+      |//]
+      |}
+      |""".stripMargin)
 }
