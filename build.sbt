@@ -1,7 +1,7 @@
 import sbtghpackages.TokenSource.Environment
 
 ThisBuild / scalaVersion := "2.12.10"
-ThisBuild / version := "0.2.3"
+ThisBuild / version := "0.2.5"
 ThisBuild / organization := "lambda"
 ThisBuild / organizationName := "Lambdacademy"
 
@@ -17,7 +17,7 @@ lazy val root = (project in file("."))
     name := "course-dsl",
     githubOwner := "lambdacademy-dev",
     libraryDependencies ++= Seq(
-      "lambda" %% "domain" % "0.4.1",
+      "lambda" %% "domain" % "0.4.5",
       "org.scalatest" %% "scalatest" % "3.0.8" % Test
     )
   )
