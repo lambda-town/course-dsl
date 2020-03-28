@@ -18,6 +18,6 @@ lazy val root = (project in file("."))
     githubOwner := "lambdacademy-dev",
     libraryDependencies ++= Seq(
       "lambda" %% "domain" % "0.4.6",
-      "org.scalatest" %% "scalatest" % "3.0.8" % Test
+      "org.scalatest" %% "scalatest" % "3.1.1" % Test
     )
   )
