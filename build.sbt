@@ -5,12 +5,10 @@ ThisBuild / version := "0.2.8"
 ThisBuild / organization := "lambda"
 ThisBuild / organizationName := "Lambdacademy"
 
-ThisBuild / githubUser := sys.env.getOrElse("GITHUB_USER", "REPLACE_ME")
-ThisBuild / githubOwner := "lambdacademy-dev"
-ThisBuild / githubTokenSource := Some(Environment("GITHUB_TOKEN"))
-ThisBuild / githubRepository := "course-dsl"
-
-ThisBuild / resolvers ++= Seq("domain").map(Resolver.githubPackagesRepo("lambdacademy-dev", _))
+githubOwner := "lambdacademy-dev"
+resolvers += Resolver.githubPackages("lambdacademy-dev")
+githubRepository := "course-dsl"
+githubTokenSource :=  TokenSource.Environment("GITHUB_TOKEN") || TokenSource.GitConfig("github.token")
 
 lazy val root = (project in file("."))
   .settings(
